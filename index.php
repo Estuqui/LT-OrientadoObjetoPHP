@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Views/CSS/estiloindex.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Página Principal</title>
 </head>
 
@@ -17,27 +18,15 @@
         </div>
 
         <ul>
-            <li> <a href="#"> Home </a> </li>
-            <li> <a href="#"> Sobre nós </a> </li>
-            <li> <a href="#"> Contato</a> </li>
+            <li> <a href="#"> Home <i class="bi bi-house-fill"></i></a> </li>
+            <li> <a href="#"> Sobre <i class="bi bi-chat-text-fill"></i></a> </li>
+            <li> <a href="#"> Suporte <i class="bi bi-person-fill-gear"></i> </a> </li>
+            <li> <a href="#"> Agenda <i class="bi bi-person-lines-fill"></i></a> </li>
+            <li> <a href="#"> Exit <i class="bi bi-box-arrow-right"></i></a> </li>
         </ul>
 
     </nav>
-    <section class="banner">
-        <div class="texto">
-            <br>
-            <h1 class="titulo">Sua lista telefônica On-line</h1>
-            <div class="botoes">
-                <br>
-                <button class="n-overlay">Login</button>
-                <a href="/Views/cadastro.php"> <button class="n-overlay"> Inscrever </button>
-                </a>
-                <br>
-                <br>
-                <br>
-            </div>
-        </div>
-    </section>
+
 </body>
 
 </html>

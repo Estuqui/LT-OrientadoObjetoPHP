@@ -18,18 +18,23 @@
 
         <ul>
             <li> <a href="#"> Home </a> </li>
-            <li> <a href="#"> Sobre </a> </li>
-            <li> <a href="#"> Agenda</a> </li>
-            <li> <a href="#"> Exit </a> </li>
+            <li> <a href="#"> Sobre nós </a> </li>
+            <li> <a href="#"> Contato</a> </li>
         </ul>
 
     </nav>
     <section class="banner">
         <div class="texto">
+            <br>
             <h1 class="titulo">Sua lista telefônica On-line</h1>
             <div class="botoes">
-                <button class="n-overlay">Saiba Mais</button>
-                <button class="n-overlay">Inscrever</button>
+                <br>
+                <button class="n-overlay">Login</button>
+                <a href="/Views/cadastro.php"> <button class="n-overlay"> Inscrever </button>
+                </a>
+                <br>
+                <br>
+                <br>
             </div>
         </div>
     </section>

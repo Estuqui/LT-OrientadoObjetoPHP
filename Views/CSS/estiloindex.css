@@ -6,6 +6,9 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  background-color: gray;
+}
 nav {
   background-color: black;
   padding: 10px 60px;
@@ -42,7 +45,10 @@ nav li a:hover {
   color: black;
 }
 .banner {
-  height: 100vh;
+  border-radius: 10px;
+  margin-top: 150px;
+  margin-left: 80px;
+  margin-right: 80px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -57,11 +63,7 @@ nav li a:hover {
   font-size: 60px;
   font-weight: 600;
 }
-.texto .sub_titulo {
-  color: #fff;
-  font-size: 58px;
-  font-weight: 600;
-}
+
 .texto .botoes {
   margin-top: 30px;
 }

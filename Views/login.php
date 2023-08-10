@@ -1,3 +1,22 @@
+<?php 
+
+include("./Model/config.php");
+
+class Login{
+    private $conn;
+    
+    public function __construct($conn){
+    }
+}
+
+
+
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 

@@ -1,29 +1,54 @@
-<?php 
-$host = "localhost";
-$db_name = "lista_telefonica";
-$username = "jessica";
-$password = "123456";
+<?php
+
+class Database {
+    private $host = "localhost";
+    private $db_name = "lista_telefonica";
+    private $username = "jessica";
+    private $password = "123456";
+    private $conn;
 
 
-try {
-   $conexao = new PDO("mysql:host=$host;dbname=$db_name", $username, $password);
-   $query = "SELECT * FROM contatos";
-   $resultado = $conexao->query($query);
-    while($dados = $resultado->fetch(PDO::FETCH_ASSOC)){
-    $id = $dados["id"];
-    $nomecompleto = $dados["nomecompleto"];
-    $email = $dados["email"];
-    $senha = $dados["senha"];
+public function getConnection() {
+    $this->conn = null;
 
-    echo"Id: $id, nomecompleto: $nomecompleto, email: $email, telefone: $telefone";
+    try {
+        $this->conn = new PDO("mysql:host=".$this->host . ";dbname=".$this->db_name, $this->username, $this->username);
+        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+     } catch (PDOException $e){
+             echo"Erro: ".$e->getMessage();
+         }
+     
+         return $this->conn;
+}
+
+public function adicionarcontato($nome,$email,$telefone){
+    global $pdo;
+    $stmt = $pdo->prepare("INSERT INTO contatos (nome,email,telefone) VALUES (?, ?, ?)");
+    $stmt->bind_param('sss', 
+        htmlspecialchars($_POST["nome"], ENT_QUOTES), 
+        htmlspecialchars($_POST["email"], ENT_QUOTES), 
+        htmlspecialchars($_POST["telefone"], ENT_QUOTES)
+    );
+    $stmt->execute();
+}
     
-   }
-$conexao=null;
-} catch (PDOException $e){
-        echo"Erro: ".$e->getMessage();
-    }
+public function atualizarcontato($nome,$email,$telefone,$id){
+    global $pdo;
+    $stmt = $pdo->prepare("UPDATE contatos SET nome = ?, email = ?,telefone = ? WHERE id=?");
+    $stmt->bind_param('sssd',
+        htmlspecialchars($_POST["nome"], ENT_QUOTES), 
+        htmlspecialchars($_POST["email"], ENT_QUOTES), 
+        htmlspecialchars($_POST["telefone"], ENT_QUOTES),
+        htmlspecialchars($_POST["id"], ENT_QUOTES)
+    );
+    $stmt->execute();
 
-   
+}
 
-
+public function excluircontato($id){
+    global $pdo;
+    $stmt = $pdo->prepare("DELETE FROM contatos WHERE id=?");
+    $stmt->execute(["id"]);
+}
+}
 ?>

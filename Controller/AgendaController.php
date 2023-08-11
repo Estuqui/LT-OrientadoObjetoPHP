@@ -12,6 +12,7 @@
         
         function getAll(){
             $result = $this->listadecontato->getAll();
+            require_once("./Views/Agenda.php");
         }
 
            

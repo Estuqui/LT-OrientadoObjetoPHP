@@ -10,7 +10,8 @@
         }
         
         function getAll(){
-            $sql = $this->Conn->query("SELECT * FROM $this->tabela");
+    
+            $sql = $this->conn->query("SELECT * FROM $this->tabela");
             $resultQuery = $sql->fetchAll();
             return $resultQuery;
         }

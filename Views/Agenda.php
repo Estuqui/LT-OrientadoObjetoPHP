@@ -6,35 +6,39 @@
     $action = !empty($_GET["action"]) ? $_GET["action"] : "getAll";
 
     $agenda->{$action}();
+
 ?>
 
-<!--<!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos</title>
+</head>
 
-    <body>
-        <table>
+<body>
+    <h1>Lista de Contatos</h1>
+    <div class="container">
+        <table class="tabela">
             <thead>
+                <th>Id</th>
                 <th>Nome</th>
-                <th>Contato</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
             </thead>
             <tbody>
-                //<?php //$lista = PegaListaDeContatos();
-                //foreach($lista as $contato) {
-                   // echo "<tr>";
-                    //echo "<td>" . $contato->Nome . "</td>";
-                    //echo "<td>" . $contato->Telefone . "</td>";
-                    //echo "<td>" . ApagaContato($contato) . "</td>";
-                    //echo "</tr>";
-                //}
-            //?>
+                <?php foreach($result as $dados); ?>
+                <tr>
+                    <td><?= $dados["id"] ?></td>
+                    <td><?= $dados["nome"] ?></td>
+                    <td><?= $dados["telefone"] ?></td>
+                    <td><?= $dados["email"] ?></td>
+                </tr>
             </tbody>
         </table>
-    </body>
+    </div>
+</body>
 
-    </html>
+</html>

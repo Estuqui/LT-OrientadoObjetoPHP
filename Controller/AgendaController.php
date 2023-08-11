@@ -1,13 +1,20 @@
 <?php 
-    include("../Model/ModelAgenda.php");
+    
+    require_once("./Model/ModelAgenda.php");
 
-    function PegaListaDeContatos() {
-        $listadecontato = ConexaoComBancoESelect();
-        return $listadecontato;
-    }
+    class AgendaController{
+        private $listadecontato;
+        
+        function __construct()
+        {
+            $this->listadecontato = new AgendaModel;
+        }
+        
+        function getAll(){
+            $result = $this->listadecontato->getAll();
+        }
 
-    function ApagaContato(Contato $c) {
-        ApagaContato($c);
+           
     }
 
 ?>

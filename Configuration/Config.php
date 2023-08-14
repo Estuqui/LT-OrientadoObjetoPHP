@@ -1,32 +1,20 @@
 <?php
 
-    define('HOST','localhost');
-    define('DATABASE','lista_telefonica');
-    define('USERNAME', 'jessica');
-    define('PASSWORD','123456');
+    class Database{
 
-    class Conn{
-        public $conn;
-        
-        function __construct()
-        {
-            $this->ConnDataBase();
-        }
+        private $host = "localhost";
+        private $db_name = "lista_telefonica";
+        private $username = "jessica";
+        private $password = "123456";
 
-        function ConnDataBase(){
-            $this->conn = null;
-            
-            try{
-                $this->conn =  new PDO('mysql:host='.HOST.';dbname='.DATABASE, USERNAME, PASSWORD);
-            }
-            catch (PDOException $e){
-                echo "Erro".$e->getMessage();
-            }
-            
-            
+        public function connect(){
+            $pdo = new PDO("mysql:host=$this->host; dbname=$this->db_name", $this->username, $this->password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                return $pdo;
         }
     }
 
-    $testConnection = new Conn();
     
+?>
+
 ?>

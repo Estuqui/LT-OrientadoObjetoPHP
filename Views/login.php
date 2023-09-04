@@ -1,11 +1,13 @@
-<?php 
+<?php
 
 include("./Model/config.php");
 
-class Login{
+class Login
+{
     private $conn;
-    
-    public function __construct($conn){
+
+    public function __construct($conn)
+    {
     }
 }
 

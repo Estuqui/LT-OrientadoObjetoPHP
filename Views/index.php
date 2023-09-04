@@ -1,3 +1,14 @@
+<?php
+
+require_once("../Controller/AgendaController.php");
+
+$agenda = new AgendaController();
+
+$action = !empty($_GET["action"]) ? $_GET["action"] : "getAll";
+
+$agenda->{$action}();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,14 +29,26 @@
         </div>
 
         <ul>
-            <li> <a href="#"> Home <i class="bi bi-house-fill"></i></a> </li>
-            <li> <a href="#"> Sobre <i class="bi bi-chat-text-fill"></i></a> </li>
-            <li> <a href="#"> Suporte <i class="bi bi-person-fill-gear"></i> </a> </li>
-            <li> <a href="#"> Agenda <i class="bi bi-person-lines-fill"></i></a> </li>
-            <li> <a href="#"> Exit <i class="bi bi-box-arrow-right"></i></a> </li>
+            <li> <a href="#">Sobre <i class="bi bi-person-fill-exclamation"></i></a></li>
+            <li> <a href="#">Suporte <i class="bi bi-person-fill-gear"></i> </a> </li>
+            <li> <a href="#">Exit <i class="bi bi-box-arrow-right"></i></a> </li>
         </ul>
 
     </nav>
+
+    <h1>Lista de Contatos <i class="bi bi-person-lines-fill"></i></h1>
+    <div class="container">
+        <table class="table table-bordered border-primary" id=" contatos">
+            <thead>
+                <th> </th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
+            </thead>
+
+
+        </table>
+    </div>
 </body>
 
 </html>
